@@ -1,0 +1,32 @@
+{
+  "title": "Terranet/Options",
+  "tagline": "The easy way to manage your settings",
+  "author": "Endi Hunter",
+  "image": "<base_url>img/app.png",
+  "theme": "daux-navy",
+  "template": "default",
+  "clean_urls": true,
+  "toggle_code": false,
+  "breadcrumbs": true,
+  "breadcrumb_separator": "Chevrons",
+  "date_modified": true,
+  "float": false,
+  "file_editor": true,
+  "repo": "https://gitlab.top.md/terranet/options",
+  "ignore": {
+    "files": [
+      "Work_In_Progress.md"
+    ],
+    "folders": [
+      "99_Not_Ready"
+    ]
+  },
+  "twitter": [],
+  "google_analytics": "",
+  "links": {
+    "GitLab": "https://gitlab.top.md/terranet/options",
+    "Download": "https://gitlab.top.md/terranet/options/repository/archive.zip",
+    "Help/Support/Bugs": "https://gitlab.top.md/terranet/options/issues",
+    "Made by Terranet": "terranet.md"
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "terranet/options",
+    "description": "Package provide easy way to load options from database",
+    "authors": [
+        {
+            "name": "endi",
+            "email": "endi1982@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-0": {
+            "Terranet\\Options": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}
