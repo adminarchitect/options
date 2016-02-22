@@ -1,2 +1,2 @@
-# settings
-Admin Architect - Settings module
+# Options
+Admin Architect - Options module
