@@ -1,10 +1,18 @@
 {
-    "name": "terranet/options",
-    "description": "Package provide easy way to load options from database",
+    "name": "adminarchitect/settings",
+    "description": "Admin Architect - Settings Module. Package provide easy way to load and store options from/in database",
+    "keywords": [
+        "laravel",
+        "settings",
+        "options",
+        "laravel options",
+        "laravel settings",
+        "admin architect"
+    ],
     "authors": [
         {
             "name": "endi",
-            "email": "endi1982@gmail.com"
+            "email": "endi@terranet.md"
         }
     ],
     "require": {},
