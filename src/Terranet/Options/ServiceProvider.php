@@ -3,7 +3,6 @@
 namespace Terranet\Options;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use Route;
 use Terranet\Options\Console\OptionMakeCommand;
 use Terranet\Options\Console\OptionRemoveCommand;
 use Terranet\Options\Console\OptionsTableCommand;
@@ -16,7 +15,7 @@ class ServiceProvider extends BaseServiceProvider
             define('_TERRANET_OPTIONS_', 1);
         }
 
-        $baseDir = base_path("vendor/terranet/options");
+        $baseDir = realpath(__DIR__ . '/../../../');
         $this->publishes(["{$baseDir}/src/routes.php" => app_path('Http/Terranet/Options/routes.php')], 'routes');
 
         if (! $this->app->routesAreCached()) {
