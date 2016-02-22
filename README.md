@@ -5,8 +5,7 @@ adminarchitect/options provides the way to store/read key => value options to/fr
 
 `Note:` this is not standalone package, it can be used only in conjunction with `Admin Architect` (`http://adminarchitect.com`) package.
 
-```
-then require it:
+Install adminarchitect/options module by running:
 
 ```
 composer require adminarchitect/options
