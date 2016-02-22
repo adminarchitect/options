@@ -1,5 +1,5 @@
 {
-    "name": "adminarchitect/settings",
+    "name": "adminarchitect/options",
     "description": "Admin Architect - Settings Module. Package provide easy way to load and store options from/in database",
     "keywords": [
         "laravel",
