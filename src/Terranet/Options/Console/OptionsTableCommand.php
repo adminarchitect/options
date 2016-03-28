@@ -4,7 +4,7 @@ namespace Terranet\Options\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Composer;
-use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Composer;
 
 class OptionsTableCommand extends Command
 {
