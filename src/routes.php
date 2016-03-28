@@ -7,7 +7,8 @@
 */
 Route::group([
     'prefix'    => 'admin',
-    'namespace' => 'Terranet\Administrator'
+    'namespace' => 'Terranet\Administrator',
+    'middleware'=> ['web'],
 ], function () {
     Route::group([], function () {
         Route::get('settings', [
