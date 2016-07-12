@@ -11,7 +11,7 @@ Install adminarchitect/options module by running:
 composer require adminarchitect/options
 ```
 
-register Options service provider by adding to the app/config.php `providers` section:
+register Options service provider by adding it to the app/config.php `providers` section:
 
 ```
 'providers' => [
@@ -20,6 +20,8 @@ register Options service provider by adding to the app/config.php `providers` se
 	...
 ]
 ```
+
+Note! `Terranet\Options\ServiceProvider::class` should be registered BEFORE `Terranet\Administrator\ServiceProvider::class`.
 
 now you can publish the whole package resources by running:
 
