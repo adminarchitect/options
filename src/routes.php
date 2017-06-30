@@ -6,7 +6,7 @@
 |-------------------------------------------------------
 */
 Route::group([
-    'prefix'    => 'admin',
+    'prefix'    => config('administrator.prefix', 'admin'),
     'namespace' => 'Terranet\Administrator\Controllers',
     'middleware'=> ['web'],
 ], function () {
