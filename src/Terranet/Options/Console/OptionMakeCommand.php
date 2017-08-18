@@ -13,7 +13,7 @@ class OptionMakeCommand extends Command
 
     protected $description = 'Insert new option';
 
-    public function fire()
+    public function handle()
     {
         $name = $this->argument('name');
         $value = $this->argument('value') ? : '';

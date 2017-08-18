@@ -11,7 +11,7 @@ class OptionRemoveCommand extends Command
 
     protected $description = 'Remove an option';
 
-    public function fire()
+    public function handle()
     {
         $name = $this->argument('name');
 
