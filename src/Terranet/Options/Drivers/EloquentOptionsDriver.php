@@ -25,7 +25,7 @@ class EloquentOptionsDriver implements Driver
     }
 
     /**
-     * Find an option by name
+     * Find an option by name.
      *
      * @param $name
      * @param $default
@@ -34,12 +34,12 @@ class EloquentOptionsDriver implements Driver
     public function find($name, $default = null)
     {
         return ($options = $this->fetchAll()->lists('value', 'key')) && $options->has($name)
-                ? $options->get($name)
-                : $default;
+            ? $options->get($name)
+            : $default;
     }
 
     /**
-     * Fetch all options
+     * Fetch all options.
      *
      * @return mixed
      */
@@ -68,18 +68,19 @@ class EloquentOptionsDriver implements Driver
     }
 
     /**
-     * Save options
+     * Save options.
      *
-     * @param        $options
-     * @return mixed
+     * @param array $options
+     * @return int
      */
     public function save($options)
     {
         $updated = 0;
-        while (list($key, $value) = each($options)) {
+
+        foreach ($options as $key => $value) {
             $updated += $this
                 ->createModel()
-                ->whereKey($key)
+                ->where('key', '=', $key)
                 ->update(['value' => $value]);
         }
 
@@ -87,27 +88,27 @@ class EloquentOptionsDriver implements Driver
     }
 
     /**
-     * Create new option
+     * Create new option.
      *
-     * @param        $key
-     * @param        $value
+     * @param string $key
+     * @param string $value
      * @param string $group
-     * @return static
+     * @return \Illuminate\Database\Eloquent\Model|$this
      */
     public function create($key, $value, $group = Manager::DEFAULT_GROUP)
     {
         return $this->createModel()->create([
-            'key'   => $key,
+            'key' => $key,
             'value' => $value,
             'group' => $group,
         ]);
     }
 
     /**
-     * Delete an option
+     * Delete an option.
      *
-     * @param        $key
-     * @return static
+     * @param string $key
+     * @return bool|null
      */
     public function remove($key)
     {

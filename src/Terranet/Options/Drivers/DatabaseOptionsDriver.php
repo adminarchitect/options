@@ -31,7 +31,6 @@ class DatabaseOptionsDriver implements Driver
         $this->table = $table;
     }
 
-
     /**
      * Fetch all options
      *
@@ -71,12 +70,13 @@ class DatabaseOptionsDriver implements Driver
      * Save options
      *
      * @param $options
-     * @return mixed
+     * @return int
      */
     public function save($options)
     {
         $updated = 0;
-        while (list($key, $value) = each($options)) {
+
+        foreach ($options as $key => $value) {
             $updated += $this
                 ->createModel()
                 ->where('key', '=', $key)
@@ -89,16 +89,16 @@ class DatabaseOptionsDriver implements Driver
     /**
      * Create new option
      *
-     * @param        $key
-     * @param        $value
+     * @param string $key
+     * @param string $value
      * @param string $group
-     * @return static
+     * @return bool
      */
     public function create($key, $value, $group = 'general')
     {
         return $this->createModel()
             ->insert([
-                'key'   => $key,
+                'key' => $key,
                 'value' => $value,
                 'group' => $group,
             ]);
@@ -107,8 +107,8 @@ class DatabaseOptionsDriver implements Driver
     /**
      * Delete an option
      *
-     * @param        $key
-     * @return static
+     * @param string $key
+     * @return int
      */
     public function remove($key)
     {
