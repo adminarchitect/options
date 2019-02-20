@@ -34,13 +34,17 @@ class DatabaseOptionsDriver implements Driver
     /**
      * Fetch all options
      *
+     * @param null|string $group
      * @return mixed
      */
-    public function fetchAll()
+    public function fetchAll(string $group = null)
     {
         if (static::$options === null) {
             static::$options = $this
                 ->createModel()
+                ->when($group, function ($query, $group) {
+                    return $query->where('group', $group);
+                })
                 ->orderBy('key', 'asc')
                 ->get();
         }

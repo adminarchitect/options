@@ -6,7 +6,7 @@ if (! function_exists('options_fetch')) {
     /**
      * Fetch all available options
      *
-     * @param       $group
+     * @param null|string $group
      * @return
      */
     function options_fetch($group = null)
