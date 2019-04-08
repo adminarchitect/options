@@ -52,6 +52,7 @@ class EloquentOptionsDriver implements Driver
                  ->when($group, function ($query, $group) {
                     return $query->where('group', $group);
                 })
+                ->orderBy('group', 'asc')
                 ->orderBy('key', 'asc')
                 ->get();
         }
