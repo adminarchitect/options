@@ -4,6 +4,8 @@ namespace Terranet\Options\Console;
 
 use Exception;
 use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Composer;
 use Symfony\Component\Console\Input\InputArgument;
 use Terranet\Options\Manager;
 
@@ -12,6 +14,32 @@ class OptionMakeCommand extends Command
     protected $name = 'options:make';
 
     protected $description = 'Insert new option';
+
+    /**
+     * The filesystem instance.
+     *
+     * @var \Illuminate\Filesystem\Filesystem
+     */
+    protected $files;
+
+    /**
+     * @var \Illuminate\Support\Composer
+     */
+    protected $composer;
+
+    /**
+     * Create a new session table command instance.
+     *
+     * @param  \Illuminate\Filesystem\Filesystem $files
+     * @param  \Illuminate\Support\Composer   $composer
+     */
+    public function __construct(Filesystem $files, Composer $composer)
+    {
+        parent::__construct();
+
+        $this->files = $files;
+        $this->composer = $composer;
+    }
 
     public function handle()
     {
