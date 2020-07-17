@@ -15,7 +15,7 @@ class ServiceProvider extends BaseServiceProvider
             define('_TERRANET_OPTIONS_', 1);
         }
 
-        $baseDir = realpath(__DIR__ . '/../');
+        $baseDir = realpath(__DIR__ . '/');
         $this->publishes(["{$baseDir}/routes.php" => app_path('Http/Terranet/Options/routes.php')], 'routes');
 
         if (! $this->app->routesAreCached()) {
