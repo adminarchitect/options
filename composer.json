@@ -23,8 +23,18 @@
         "psr-0": {
             "Terranet\\Options": "src/"
         },
+        "psr-4": {
+            "Terranet\\Options\\": "src/"
+        },
         "files": [
             "src/helpers.php"
         ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Terranet\\Options\\ServiceProvider"
+            ]
+        }
     }
 }

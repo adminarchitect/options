@@ -15,8 +15,8 @@ class ServiceProvider extends BaseServiceProvider
             define('_TERRANET_OPTIONS_', 1);
         }
 
-        $baseDir = realpath(__DIR__ . '/../../../');
-        $this->publishes(["{$baseDir}/src/routes.php" => app_path('Http/Terranet/Options/routes.php')], 'routes');
+        $baseDir = realpath(__DIR__ . '/');
+        $this->publishes(["{$baseDir}/routes.php" => app_path('Http/Terranet/Options/routes.php')], 'routes');
 
         if (! $this->app->routesAreCached()) {
             if (file_exists($routes = app_path('Http/Terranet/Options/routes.php'))) {
@@ -24,7 +24,7 @@ class ServiceProvider extends BaseServiceProvider
                 require_once $routes;
             } else {
                 /** @noinspection PhpIncludeInspection */
-                require_once "{$baseDir}/src/routes.php";
+                require_once "{$baseDir}/routes.php";
             }
         }
     }

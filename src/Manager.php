@@ -29,9 +29,7 @@ class Manager extends DriverManager
 
     public function createDatabaseOptionsDriver()
     {
-        return new DatabaseOptionsDriver(
-            $this->app['db']->connection(),
-            'options'
-        );
+        $db = $this->container->get('db');
+        return new DatabaseOptionsDriver($db->connection(), 'options');
     }
 }
